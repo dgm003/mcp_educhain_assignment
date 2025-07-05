@@ -13,8 +13,8 @@ This project implements an MCP (Model Context Protocol) server using the [EduCha
 
 ### 1. Clone the Repository
 ```
-git clone <your-repo-url>
-cd <your-repo-directory>
+git clone https://github.com/dgm003/mcp_educhain_assignment.git
+cd mcp_educhain_assignment 
 ```
 
 ### 2. Install Dependencies
