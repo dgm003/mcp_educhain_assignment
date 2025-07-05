@@ -92,7 +92,6 @@ See `Sample_Responses.txt` for example outputs from the endpoints.
 - Python code with clear comments and documentation.
 - Sample commands and responses (`Sample_Responses.txt`).
 - This README file.
-- (Optional) Video walkthrough link.
 
 ## Claude Desktop MCP Integration Note
 > The public version of Claude Desktop (from [claude.ai](https://claude.ai/download)) does **not** currently support MCP server integration or custom tool configuration. As a result, direct integration and testing with Claude Desktop was not possible. All endpoints have been tested using Thunder Client (VSCode extension) and Postman. Please contact the assignment coordinator if an MCP-enabled build of Claude Desktop is required.
