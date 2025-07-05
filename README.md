@@ -76,14 +76,17 @@ See `Sample_Responses.txt` for example outputs from the endpoints.
 
 ## Screenshots
 
-### Thunder Client - Successful Lesson Plan Response
-![Thunder Client showing successful response for lesson plan](screenshots/Thunder_Client_showing_successful_response_generate_lesson_plan.png)
+### Terminal - FastAPI Server Running
+![Terminal running FastAPI server](screenshots/terminal_uvicorn_running.png)
+
 
 ### Thunder Client - Successful MCQ Response
 ![Thunder Client showing successful response for MCQs](screenshots/Thunder_Client_showing_successful_response_generate_mcqs.png)
 
-### Terminal - FastAPI Server Running
-![Terminal running FastAPI server](screenshots/terminal_uvicorn_running.png)
+
+### Thunder Client - Successful Lesson Plan Response
+![Thunder Client showing successful response for lesson plan](screenshots/Thunder_Client_showing_successful_response_generate_lesson_plan.png)
+
 
 ## Deliverables
 - Python code with clear comments and documentation.
