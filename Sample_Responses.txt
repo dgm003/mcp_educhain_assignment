@@ -1,0 +1,21 @@
+/generate_mcqs Request
+{
+  "topic": "Python Loops",
+  "num": 2
+}
+
+/generate_mcqs Response 
+{
+  "questions": [
+    {
+      "question": "What does a 'for' loop do in Python?",
+      "options": ["Iterates", "Sleeps", "Jumps", "Crashes"],
+      "answer": "Iterates"
+    },
+    {
+      "question": "Which keyword starts a loop?",
+      "options": ["if", "def", "for", "class"],
+      "answer": "for"
+    }
+  ]
+}

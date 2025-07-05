@@ -14,14 +14,46 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from educhain import Educhain, LLMConfig
 from langchain_core.language_models.fake import FakeListLLM
 
-# ✅ Create a fake LLM that always returns dummy text
-fake_llm = FakeListLLM(responses=["Dummy response from fake LLM"])
+from educhain import Educhain, LLMConfig
+from langchain_core.language_models.chat_models import BaseChatModel
+from langchain_core.messages import AIMessage
+from educhain import Educhain, LLMConfig
+from langchain_core.language_models.chat_models import BaseChatModel
+from langchain_core.outputs import ChatGeneration, ChatResult
+from langchain_core.messages import AIMessage
+import json
+# ✅ Fully implemented Dummy LLM with required abstract methods
+class DummyLLM(BaseChatModel):
+    def _llm_type(self) -> str:
+        return "dummy-llm"
 
-# Configure EduChain to use the fake model
-config = LLMConfig(custom_model=fake_llm)
+    def _generate(self, messages, stop=None, run_manager=None, **kwargs) -> ChatResult:
+        # Return a valid mock response in expected format
+        dummy_response = {
+            "questions": [
+                {
+                    "question": "What does a 'for' loop do in Python?",
+                    "options": ["Iterates", "Sleeps", "Jumps", "Crashes"],
+                    "answer": "Iterates"
+                },
+                {
+                    "question": "Which keyword starts a loop?",
+                    "options": ["if", "def", "for", "class"],
+                    "answer": "for"
+                }
+            ]
+        }
+
+        return ChatResult(
+            generations=[ChatGeneration(
+                message=AIMessage(content=json.dumps(dummy_response))
+            )]
+        )
+
+# Inject into EduChain
+dummy_model = DummyLLM()
+config = LLMConfig(custom_model=dummy_model)
 client = Educhain(config)
-
-
 # ---------- MCQ Tool ----------
 class MCQRequest(BaseModel):
     topic: str
@@ -35,6 +67,7 @@ def generate_mcqs(request: MCQRequest):
         question_type="Multiple Choice"
     )
     return mcqs.model_dump()
+
 
 
 # ---------- Lesson Plan Tool ----------
